@@ -9,7 +9,7 @@
 #define p8 11
 #define button 12
 
-char read_value, way;
+char read_value, way, sensivity;
 
 void setup() 
 {
@@ -32,11 +32,19 @@ void loop()
 {
   while(way != 'b' && way != 'f')
   {
-  Serial.println("which way do you want to go? (f -> forward || b -> backward )");
+  Serial.println("which way do you want to go? (f -> forward || b -> backward )\n");
   while (Serial.available()==0) {} //wait until serial input
   way = Serial.read();
   }
-  Serial.println(way);
+
+  
+  while(sensivity > 1000 && sensivity < 0)
+  {
+  Serial.println("Choose sensivity: ");
+  while (Serial.available()==0) {} //wait until serial input
+  sensivity = Serial.read();
+  }
+
   while(read_value != 'y')
   {
   Serial.println("Start? (y/n)");
