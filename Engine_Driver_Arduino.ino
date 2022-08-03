@@ -40,7 +40,7 @@ void loop()
   
   while(sensivity > 1000 && sensivity < 0)
   {
-  Serial.println("Choose sensivity: ");
+  Serial.println("Choose sensivity (0 - 1000)\n");
   while (Serial.available()==0) {} //wait until serial input
   sensivity = Serial.read();
   }
@@ -82,25 +82,25 @@ void forward()
 {
 
  first_step();
- delay(10);
+ delay(sensivity);
  second_step();
- delay(10);
+ delay(sensivity);
  third_step();
- delay(10);
+ delay(sensivity);
  fourth_step();
- delay(10);
+ delay(sensivity);
  
   }
 void backward()
 {
    fourth_step();
-   delay(10);
+   delay(sensivity);
    third_step();
-   delay(10);
+   delay(sensivity);
    second_step();
-   delay(10);
+   delay(sensivity);
    first_step();
-   delay(10);
+   delay(sensivity);
  
   }
 void first_step()
@@ -109,7 +109,7 @@ void first_step()
   digitalWrite(p2,LOW);
   digitalWrite(p3,LOW);
   digitalWrite(p4,HIGH);
-  delay(10);
+  delay(sensivity);
   digitalWrite(p1,LOW);
   digitalWrite(p2,LOW);
   digitalWrite(p3,LOW);
@@ -126,7 +126,7 @@ void second_step()
   digitalWrite(p6,HIGH);
   digitalWrite(p7,HIGH);
   digitalWrite(p8,LOW);
-  delay(10);
+  delay(sensivity);
   digitalWrite(p1,LOW);
   digitalWrite(p2,LOW);
   digitalWrite(p3,LOW);
@@ -142,7 +142,7 @@ void third_step(){
   digitalWrite(p2,HIGH);
   digitalWrite(p3,HIGH);
   digitalWrite(p4,LOW);
-  delay(10);
+  delay(sensivity);
   digitalWrite(p1,LOW);
   digitalWrite(p2,LOW);
   digitalWrite(p3,LOW);
@@ -158,7 +158,7 @@ void fourth_step(){
   digitalWrite(p6,LOW);
   digitalWrite(p7,LOW);
   digitalWrite(p8,HIGH);
-  delay(10);
+  delay(sensivity);
   digitalWrite(p1,LOW);
   digitalWrite(p2,LOW);
   digitalWrite(p3,LOW);
