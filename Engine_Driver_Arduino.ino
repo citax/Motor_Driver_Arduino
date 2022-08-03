@@ -46,6 +46,8 @@ void loop()
   sensivity = Serial.read();
   }
 
+  delay(10);//for bugs
+
   while(read_value != 'y')
   {
   Serial.println("Start? (y/n)");
