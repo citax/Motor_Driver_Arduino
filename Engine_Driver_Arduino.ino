@@ -8,21 +8,18 @@
 #define p7 10
 #define p8 11
 #define button 12
+#define OUTPUT_LENGTH 8
 
 char read_value, way;
 int sensivity = 1001;
+int outputs[OUTPUT_LENGTH] = {p1, p2, p3, p4, p5, p6, p7, p8};
 
 void setup() 
 {
-
-  pinMode(p1,OUTPUT);
-  pinMode(p2,OUTPUT);
-  pinMode(p3,OUTPUT);
-  pinMode(p4,OUTPUT);
-  pinMode(p5,OUTPUT);
-  pinMode(p6,OUTPUT);
-  pinMode(p7,OUTPUT);
-  pinMode(p8,OUTPUT);
+  for(int i = 0; i < OUTPUT_LENGTH; i++)
+  {
+    pinMode(outputs[i], OUTPUT);
+  }
   pinMode(button,INPUT);
   Serial.begin(115200);
   Serial.println("Hello World!");
@@ -113,15 +110,10 @@ void first_step()
   digitalWrite(p3,LOW);
   digitalWrite(p4,HIGH);
   delay(sensivity);
-  digitalWrite(p1,LOW);
-  digitalWrite(p2,LOW);
-  digitalWrite(p3,LOW);
-  digitalWrite(p4,LOW);
-  digitalWrite(p5,LOW);
-  digitalWrite(p6,LOW);
-  digitalWrite(p7,LOW);
-  digitalWrite(p8,LOW);
-  
+  for(int i = 0; i < OUTPUT_LENGTH; i++)
+  {
+    digitalWrite(outputs[i], LOW);
+  }
 }
 void second_step()
 {
@@ -130,15 +122,10 @@ void second_step()
   digitalWrite(p7,HIGH);
   digitalWrite(p8,LOW);
   delay(sensivity);
-  digitalWrite(p1,LOW);
-  digitalWrite(p2,LOW);
-  digitalWrite(p3,LOW);
-  digitalWrite(p4,LOW);
-  digitalWrite(p5,LOW);
-  digitalWrite(p6,LOW);
-  digitalWrite(p7,LOW);
-  digitalWrite(p8,LOW);
-  
+  for(int i = 0; i < OUTPUT_LENGTH; i++)
+  {
+    digitalWrite(outputs[i], LOW);
+  }
 }
 void third_step(){
   digitalWrite(p1,LOW);
@@ -146,15 +133,10 @@ void third_step(){
   digitalWrite(p3,HIGH);
   digitalWrite(p4,LOW);
   delay(sensivity);
-  digitalWrite(p1,LOW);
-  digitalWrite(p2,LOW);
-  digitalWrite(p3,LOW);
-  digitalWrite(p4,LOW);
-  digitalWrite(p5,LOW);
-  digitalWrite(p6,LOW);
-  digitalWrite(p7,LOW);
-  digitalWrite(p8,LOW);
-  
+  for(int i = 0; i < OUTPUT_LENGTH; i++)
+  {
+    digitalWrite(outputs[i], LOW);
+  }
 }
 void fourth_step(){
   digitalWrite(p5,HIGH);
@@ -162,13 +144,8 @@ void fourth_step(){
   digitalWrite(p7,LOW);
   digitalWrite(p8,HIGH);
   delay(sensivity);
-  digitalWrite(p1,LOW);
-  digitalWrite(p2,LOW);
-  digitalWrite(p3,LOW);
-  digitalWrite(p4,LOW);
-  digitalWrite(p5,LOW);
-  digitalWrite(p6,LOW);
-  digitalWrite(p7,LOW);
-  digitalWrite(p8,LOW);
-  
+  for(int i = 0; i < OUTPUT_LENGTH; i++)
+  {
+    digitalWrite(outputs[i], LOW);
+  }
 }
