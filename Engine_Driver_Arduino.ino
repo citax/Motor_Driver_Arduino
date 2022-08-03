@@ -9,7 +9,8 @@
 #define p8 11
 #define button 12
 
-char read_value, way, sensivity;
+char read_value, way;
+int sensivity = 1001;
 
 void setup() 
 {
@@ -38,7 +39,7 @@ void loop()
   }
 
   
-  while(sensivity > 1000 && sensivity < 0)
+  while(sensivity > 1000 || sensivity < 0)
   {
   Serial.println("Choose sensivity (0 - 1000)\n");
   while (Serial.available()==0) {} //wait until serial input
