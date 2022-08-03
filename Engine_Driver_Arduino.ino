@@ -78,7 +78,7 @@ void loop()
   }
   way = '0';
   read_value = '0';
-  
+  sensivity = 1001;
 }
 
 void forward()
