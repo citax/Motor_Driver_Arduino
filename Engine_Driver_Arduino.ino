@@ -1,4 +1,3 @@
-
 #define p1 2
 #define p2 3
 #define p3 4
@@ -110,10 +109,7 @@ void first_step()
   digitalWrite(p3,LOW);
   digitalWrite(p4,HIGH);
   delay(sensivity);
-  for(int i = 0; i < OUTPUT_LENGTH; i++)
-  {
-    digitalWrite(outputs[i], LOW);
-  }
+  turn_off_all_outputs();
 }
 void second_step()
 {
@@ -122,10 +118,7 @@ void second_step()
   digitalWrite(p7,HIGH);
   digitalWrite(p8,LOW);
   delay(sensivity);
-  for(int i = 0; i < OUTPUT_LENGTH; i++)
-  {
-    digitalWrite(outputs[i], LOW);
-  }
+  turn_off_all_outputs();
 }
 void third_step(){
   digitalWrite(p1,LOW);
@@ -133,10 +126,7 @@ void third_step(){
   digitalWrite(p3,HIGH);
   digitalWrite(p4,LOW);
   delay(sensivity);
-  for(int i = 0; i < OUTPUT_LENGTH; i++)
-  {
-    digitalWrite(outputs[i], LOW);
-  }
+  turn_off_all_outputs();
 }
 void fourth_step(){
   digitalWrite(p5,HIGH);
@@ -144,6 +134,11 @@ void fourth_step(){
   digitalWrite(p7,LOW);
   digitalWrite(p8,HIGH);
   delay(sensivity);
+  turn_off_all_outputs();
+
+}
+
+void turn_off_all_outputs(){
   for(int i = 0; i < OUTPUT_LENGTH; i++)
   {
     digitalWrite(outputs[i], LOW);
